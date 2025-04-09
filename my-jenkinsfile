@@ -8,12 +8,12 @@ echo "This is Build stage"
 }
 stage {'TEST'} {
 steps {
-echo "This is Build stage"
+echo "This is Test stage"
 }
 }
 stage {'DE'} {
 steps {
-echo "This is Build stage"
+echo "This is DE stage"
 }
 }
 }
