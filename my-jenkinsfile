@@ -11,9 +11,9 @@ steps {
 echo "This is Test stage"
 }
 }
-stage {'DE'} {
+stage {'DEPLOY'} {
 steps {
-echo "This is DE stage"
+echo "This is Deploy stage"
 }
 }
 }
