@@ -20,7 +20,7 @@ echo "this is TEST ON SAFARI browser"
 }
 }
 }
-stage ('DEPLOY') {
+stage ('DEPLOY PARALLELE') {
 parallel
 stage ('SERVER 1') {
 steps {
