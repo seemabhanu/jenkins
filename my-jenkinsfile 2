@@ -1,3 +1,4 @@
+PROGRAM 1
 pipeline {
 agent any;
 stages {
@@ -14,6 +15,96 @@ echo "This is Test stage"
 stage ('DEPLOY') {
 steps {
 echo "This is Deploy stage"
+}
+}
+}
+}
+
+
+PROGRAM2
+pipeline {
+agent any;
+stages {
+stage ('BUILD') {
+steps {
+echo "This is Build stage"
+}
+}
+stage ('TEST PARALLELE') {
+parallel {
+stage ('TEST ON CHROME') {
+steps {
+echo "This is Test on Chrome browser"
+}
+}
+stage ('TEST ON SAFARI') {
+steps {
+echo "this is TEST ON SAFARI browser"
+}
+}
+stage ('DEPLOY') {
+steps {
+echo "This is Deploy stage"
+
+}
+}
+
+}
+}
+
+
+
+
+PROGRAM3
+pipeline {
+agent any;
+stages {
+stage ('BUILD') {
+steps {
+echo "This is Build stage"
+}
+}
+stage ('TEST PARALLELE') {
+parallel {
+stage ('TEST ON CHROME') {
+steps {
+echo "This is Test on Chrome browser"
+}
+}
+stage ('TEST ON SAFARI') {
+steps {
+echo "this is TEST ON SAFARI browser"
+}
+}
+}
+}
+
+
+stage ('DEPLOY PARALLELE') {
+parallel {
+stage ('SERVER 1') {
+steps {
+echo "This is Deploy to Server1"
+}
+}
+
+stage ('SERVER 2') {
+steps {
+echo "This is Deploy to Server2"
+}
+}
+
+stage ('SERVER 3') {
+steps {
+echo "This is Deploy to Server3"
+}
+}
+
+stage ('SERVER 4') {
+steps {
+echo "This is Deploy to Server4"
+}
+}
 }
 }
 }
