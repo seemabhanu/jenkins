@@ -6,9 +6,18 @@ steps {
 echo "This is Build stage"
 }
 }
-stage ('TEST') {
+stage ('TEST PARALLEL') {
+parallel {
+stages ('TEST ON CHROME') {
 steps {
-echo "This is Test stage"
+echo "This is Test stage on crome browser"
+}
+}
+stage ('TEST ON SAFARI') {
+steps {
+echo "this is TEST ON SAFARI browser"
+}
+}
 }
 }
 stage ('DEPLOY') {
