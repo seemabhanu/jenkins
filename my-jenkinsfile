@@ -22,27 +22,28 @@ echo "this is TEST ON SAFARI browser"
 }
 stage ('DEPLOY') {
 parallel
-stage ('SERVER1') {
+stage ('SERVER 1') {
 steps {
-echo "This is Deploy to Server"
+echo "This is Deploy to Server 1"
 }
 }
-stage ('SERVER2') {
+stage ('SERVER 2') {
 steps {
-echo "This is Deploy to Server2"
+echo "This is Deploy to Server 2"
 }
-}stage ('SERVER3') {
+}stage ('SERVER 3') {
 steps {
-echo "This is Deploy to Server3"
+echo "This is Deploy to Server 3"
 }
-}stage ('SERVER4') {
+}stage ('SERVER 4') {
 steps {
-echo "This is Deploy to Server4"
+echo "This is Deploy to Server 4"
 }
-}stage ('SERVER5') {
+}
+stage ('SERVER 5') {
 steps {
-echo "This is Deploy to Server5"
-}
+echo "This is Deploy to Server 5"
+} 
 }
 }
 }
