@@ -21,9 +21,29 @@ echo "this is TEST ON SAFARI browser"
 }
 }
 stage ('DEPLOY') {
+parallel
+stage ('SERVER1") {
 steps {
-echo "This is Deploy stage"
+echo "This is Deploy to Server"
+}
+}
+stage ('SERVER2") {
+steps {
+echo "This is Deploy to Server2"
+}
+}stage ('SERVER3") {
+steps {
+echo "This is Deploy to Server3"
+}
+}stage ('SERVER4") {
+steps {
+echo "This is Deploy to Server4"
+}
+}stage ('SERVER5") {
+steps {
+echo "This is Deploy to Server5"
 }
 }
 }
 }
+
