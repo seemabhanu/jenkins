@@ -10,7 +10,7 @@ steps {
 echo "$NAME"
 sh '''
 slep 5
-$NAME
+echo "$NAME"
 exit 0
 '''
 }
