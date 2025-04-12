@@ -1,9 +1,17 @@
 pipeline {
 agent any;
+environment {
+NAME = 'SEEMA'
+}
+
 stages {
 stage ('BUILD') {
 steps {
-echo "This is Build stage"
+echo "$NAME"
+sh '''
+slep 5
+$NAME
+exit 0
 }
 }
 stage ('TEST PARALLELE') {
