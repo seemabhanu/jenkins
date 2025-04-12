@@ -12,6 +12,7 @@ sh '''
 slep 5
 $NAME
 exit 0
+'''
 }
 }
 stage ('TEST PARALLELE') {
