@@ -1,58 +1,15 @@
 pipeline {
 agent any;
-environment {
-NAME = 'SEEMA'
+
+parameters {
+  string defaultValue: 'TEST', description: 'environment to deploy the application', name: 'ENV', trim: true
+  choice choices: ['main', 'master'], description: 'environment to deploy the application', name: 'BRANCH'
 }
 
 stages {
 stage ('BUILD') {
 steps {
-echo "$NAME"
-}
-}
-stage ('TEST PARALLELE') {
-parallel {
-stage ('TEST ON CHROME') {
-steps {
-echo "This is Test on Chrome browser"
-}
-}
-stage ('TEST ON SAFARI') {
-steps {
-echo "this is TEST ON SAFARI browser"
 }
 }
 }
 }
-
-
-stage ('DEPLOY PARALLELE') {
-parallel {
-stage ('SERVER 1') {
-steps {
-echo "This is Deploy to Server1"
-}
-}
-
-stage ('SERVER 2') {
-steps {
-echo "This is Deploy to Server2"
-}
-}
-
-stage ('SERVER 3') {
-steps {
-echo "This is Deploy to Server3"
-}
-}
-
-stage ('SERVER 4') {
-steps {
-echo "This is Deploy to Server4"
-}
-}
-}
-}
-}
-}
-
