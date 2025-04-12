@@ -8,7 +8,7 @@ stages {
 stage ('BUILD') {
 steps {
 echo "deploy to ${params.ENV"}
-echo "code from ${params.BRANCH branch}"
+echo "code from ${params.BRANCH} branch"
 }
 }
 }
