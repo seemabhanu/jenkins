@@ -4,6 +4,10 @@ parameters {
   string defaultValue: 'TEST', description: 'environment to deploy the application', name: 'ENV', trim: true
   choice choices: ['main', 'master'], description: 'environment to deploy the application', name: 'BRANCH'
 }
+environment {
+DEPLOY_BRANCH = "$BRANCH"
+DEPLOY_ENV = "$ENV"
+}
 stages {
 stage ('BUILD') {
 steps {
